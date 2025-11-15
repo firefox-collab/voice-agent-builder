@@ -1,9 +1,7 @@
 'use client'
 
-import ShaderBackground from './components/ShaderBackground'
-import Navbar from './components/ui/Navbar'
-import Accordion from './components/ui/Accordion'
 import { useState } from 'react'
+import ShaderBackground from './components/ShaderBackground'
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -24,7 +22,7 @@ export default function Home() {
               <a href="#pricing" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">Pricing</a>
               <a href="#how-it-works" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">How It Works</a>
               <a href="#faq" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">FAQs</a>
-              <a href="#cta" className="bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              <a href="#cta" className="bg-primary-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                 Start Free Trial
               </a>
             </div>
@@ -47,7 +45,7 @@ export default function Home() {
               <a href="#pricing" className="block text-gray-700 hover:text-primary-600">Pricing</a>
               <a href="#how-it-works" className="block text-gray-700 hover:text-primary-600">How It Works</a>
               <a href="#faq" className="block text-gray-700 hover:text-primary-600">FAQs</a>
-              <a href="#cta" className="block bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold text-center">
+              <a href="#cta" className="block bg-primary-600 text-white px-6 py-2.5 rounded-lg font-semibold text-center">
                 Start Free Trial
               </a>
             </div>
@@ -73,7 +71,7 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <a href="#cta" className="bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-800 transition-all shadow-lg hover:shadow-2xl transform hover:-translate-y-1 w-full sm:w-auto">
+              <a href="#cta" className="bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition-all shadow-lg hover:shadow-2xl transform hover:-translate-y-1 w-full sm:w-auto">
                 Start Your Free Trial
               </a>
               <a href="#demo" className="bg-white/90 backdrop-blur-sm border-2 border-primary-200 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-primary-600 hover:text-primary-600 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1 w-full sm:w-auto">
@@ -121,7 +119,7 @@ export default function Home() {
               <div className="text-gray-600">Time Saved</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary-600 mb-2">3,500</div>
+              <div className="text-4xl font-bold text-primary-600 mb-2">₱[XXX]</div>
               <div className="text-gray-600">Starting Price</div>
             </div>
           </div>
@@ -447,7 +445,7 @@ export default function Home() {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
                 <div className="text-5xl font-bold text-gray-900 mb-2">
-                  3,500
+                  ₱[XXX]
                   <span className="text-xl text-gray-500 font-normal">/month</span>
                 </div>
                 <p className="text-gray-600">Perfect for getting started</p>
@@ -455,7 +453,7 @@ export default function Home() {
 
               <ul className="space-y-4 mb-8">
                 {[
-                  '200 calls per month',
+                  '[X] calls per month',
                   'Industry-specific template',
                   'Basic scheduling',
                   'Email notifications',
@@ -484,7 +482,7 @@ export default function Home() {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Professional</h3>
                 <div className="text-5xl font-bold text-white mb-2">
-                  7,000
+                  ₱[XXX]
                   <span className="text-xl text-primary-100 font-normal">/month</span>
                 </div>
                 <p className="text-primary-100">For growing businesses</p>
@@ -492,7 +490,7 @@ export default function Home() {
 
               <ul className="space-y-4 mb-8">
                 {[
-                  '500 calls per month',
+                  '[X] calls per month',
                   'All Starter features',
                   'Advanced scheduling',
                   'SMS notifications',
@@ -519,7 +517,7 @@ export default function Home() {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
                 <div className="text-5xl font-bold text-gray-900 mb-2">
-                  15,000
+                  ₱[XXX]
                   <span className="text-xl text-gray-500 font-normal">/month</span>
                 </div>
                 <p className="text-gray-600">For established businesses</p>
@@ -570,41 +568,52 @@ export default function Home() {
             </p>
           </div>
 
-          <Accordion items={[
-            {
-              question: 'Do I need any technical knowledge to set this up?',
-              answer: 'None at all. If you can use Facebook, you can use Voice-Agent-Builder. Our guided setup walks you through every step in plain English (or Tagalog!).'
-            },
-            {
-              question: 'How does the 30-day free trial work?',
-              answer: 'Sign up, set up your voice agent, and use all features for 30 days completely free. No credit card required. After the trial, choose a plan or cancel — no questions asked.'
-            },
-            {
-              question: 'Can it handle both English and Tagalog calls?',
-              answer: 'Yes! Our AI understands Taglish (code-switching) and responds naturally in whatever language your customer prefers.'
-            },
-            {
-              question: 'What happens to calls when my business is closed?',
-              answer: 'Your voice agent politely informs callers of your business hours, can take messages or schedule appointments for when you reopen, and sends you a summary.'
-            },
-            {
-              question: 'Can I transfer urgent calls to my phone?',
-              answer: 'Absolutely. Set up rules for what constitutes an urgent call, and the system will forward it to your mobile number immediately.'
-            },
-            {
-              question: 'Is my customer data safe?',
-              answer: 'Yes. We use bank-level encryption, comply with data privacy laws, and never share your data with third parties. Your information stays yours.'
-            },
-            {
-              question: 'What if I need help setting things up?',
-              answer: 'We offer email support for all users, and Professional/Enterprise plans get priority support. We typically respond within 2 hours during business hours.'
-            },
-            {
-              question: 'Can I cancel anytime?',
-              answer: 'Yes. No long-term contracts. Cancel anytime from your dashboard with one click. You\'ll keep access until the end of your billing period.'
-            }
-          ]} />
+          <div className="space-y-6">
+            {[
+              {
+                question: 'Do I need any technical knowledge to set this up?',
+                answer: 'None at all. If you can use Facebook, you can use Voice-Agent-Builder. Our guided setup walks you through every step in plain English (or Tagalog!).'
+              },
+              {
+                question: 'How does the 30-day free trial work?',
+                answer: 'Sign up, set up your voice agent, and use all features for 30 days completely free. No credit card required. After the trial, choose a plan or cancel — no questions asked.'
+              },
+              {
+                question: 'Can it handle both English and Tagalog calls?',
+                answer: 'Yes! Our AI understands Taglish (code-switching) and responds naturally in whatever language your customer prefers.'
+              },
+              {
+                question: 'What happens to calls when my business is closed?',
+                answer: 'Your voice agent politely informs callers of your business hours, can take messages or schedule appointments for when you reopen, and sends you a summary.'
+              },
+              {
+                question: 'Can I transfer urgent calls to my phone?',
+                answer: 'Absolutely. Set up rules for what constitutes an urgent call, and the system will forward it to your mobile number immediately.'
+              },
+              {
+                question: 'Is my customer data safe?',
+                answer: 'Yes. We use bank-level encryption, comply with data privacy laws, and never share your data with third parties. Your information stays yours.'
+              },
+              {
+                question: 'What if I need help setting things up?',
+                answer: 'We offer email support for all users, and Professional/Enterprise plans get priority support. We typically respond within 2 hours during business hours.'
+              },
+              {
+                question: 'Can I cancel anytime?',
+                answer: 'Yes. No long-term contracts. Cancel anytime from your dashboard with one click. You\'ll keep access until the end of your billing period.'
+              }
+            ].map((faq, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-300 transition-all">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-600">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
           </div>
+        </div>
       </section>
 
       <section id="cta" className="relative py-20 bg-gradient-to-br from-primary-600 to-blue-600 px-4 sm:px-6 lg:px-8" style={{ zIndex: 1 }}>
@@ -651,7 +660,7 @@ export default function Home() {
                   <option>Other</option>
                 </select>
               </div>
-              <button type="submit" className="w-full bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-800 transition-all shadow-lg hover:shadow-xl">
+              <button type="submit" className="w-full bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl">
                 Start My Free Trial
               </button>
               <p className="text-sm text-gray-500 mt-4">
