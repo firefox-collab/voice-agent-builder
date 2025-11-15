@@ -267,7 +267,7 @@ export default function Home() {
               Why Choose Voice-Agent-Builder?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We\'re not just another AI tool. We\'re your partner in business growth.
+              We're not just another AI tool. We're your partner in business growth.
             </p>
           </div>
 
