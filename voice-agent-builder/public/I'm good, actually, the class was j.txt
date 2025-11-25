@@ -1,0 +1,195 @@
+I'm good, actually, the class was just adjourned, the topic is about creating the voice agent in Vapi, well I would love to try it.. I still have energy, anyways, I created vercel already and about to pull the proj in github, I'm seeing 2 repository 1 is "voice-agent-builder-SMB" and "voice-agent-builder", I have tried to open both in bolt , to check which is which, the "voice-agent-builder-SMB" cannot open error saying the file is too large, I open the "voice-agent-builder" it opens, but the page is not displaying... would like to ask before pulling it to vercel, is there somthing wrong
+
+
+02:18:24.455 Running build in Washington, D.C., USA (East) – iad1
+02:18:24.456 Build machine configuration: 2 cores, 8 GB
+02:18:24.597 Cloning github.com/firefox-collab/voice-agent-builder (Branch: main, Commit: 78a47d1)
+02:18:24.598 Previous build caches not available.
+02:18:24.876 Cloning completed: 279.000ms
+02:18:25.234 Running "vercel build"
+02:18:25.625 Vercel CLI 48.10.2
+02:18:25.940 Installing dependencies...
+02:18:29.941 npm warn deprecated @supabase/auth-helpers-shared@0.7.0: This package is now deprecated - please use the @supabase/ssr package instead.
+02:18:30.328 npm warn deprecated @supabase/auth-helpers-nextjs@0.10.0: This package is now deprecated - please use the @supabase/ssr package instead.
+02:18:38.306 
+02:18:38.306 added 430 packages in 12s
+02:18:38.307 
+02:18:38.307 161 packages are looking for funding
+02:18:38.307   run `npm fund` for details
+02:18:38.354 Detected Next.js version: 16.0.1
+02:18:38.357 Running "npm run build"
+02:18:38.488 
+02:18:38.488 > voice-agent-builder@0.1.0 build
+02:18:38.488 > next build
+02:18:38.488 
+02:18:39.268 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+02:18:39.269 This information is used to shape Next.js' roadmap and prioritize features.
+02:18:39.269 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+02:18:39.269 https://nextjs.org/telemetry
+02:18:39.270 
+02:18:39.280    ▲ Next.js 16.0.1 (Turbopack)
+02:18:39.281 
+02:18:39.340    Creating an optimized production build ...
+02:18:46.678 
+02:18:46.679 > Build error occurred
+02:18:46.681 Error: Turbopack build failed with 2 errors:
+02:18:46.682 ./voice-agent-builder/app/auth/page.tsx:3:1
+02:18:46.682 Module not found: Can't resolve '@supabase/auth-ui-react'
+02:18:46.682 [0m [90m 1 |[39m [32m'use client'[39m
+02:18:46.682  [90m 2 |[39m
+02:18:46.682 [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mAuth[39m } [36mfrom[39m [32m'@supabase/auth-ui-react'[39m
+02:18:46.683  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+02:18:46.683  [90m 4 |[39m [36mimport[39m { [33mThemeSupa[39m } [36mfrom[39m [32m'@supabase/auth-ui-shared'[39m
+02:18:46.683  [90m 5 |[39m [36mimport[39m { supabase } [36mfrom[39m [32m'@/lib/supabase'[39m
+02:18:46.683  [90m 6 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/navigation'[39m[0m
+02:18:46.683 
+02:18:46.683 
+02:18:46.683 
+02:18:46.683 Import traces:
+02:18:46.683   Client Component Browser:
+02:18:46.683     ./voice-agent-builder/app/auth/page.tsx [Client Component Browser]
+02:18:46.683     ./voice-agent-builder/app/auth/page.tsx [Server Component]
+02:18:46.683 
+02:18:46.683   Client Component SSR:
+02:18:46.683     ./voice-agent-builder/app/auth/page.tsx [Client Component SSR]
+02:18:46.684     ./voice-agent-builder/app/auth/page.tsx [Server Component]
+02:18:46.684 
+02:18:46.684 https://nextjs.org/docs/messages/module-not-found
+02:18:46.684 
+02:18:46.684 
+02:18:46.684 ./voice-agent-builder/app/auth/page.tsx:4:1
+02:18:46.684 Module not found: Can't resolve '@supabase/auth-ui-shared'
+02:18:46.684 [0m [90m 2 |[39m
+02:18:46.684  [90m 3 |[39m [36mimport[39m { [33mAuth[39m } [36mfrom[39m [32m'@supabase/auth-ui-react'[39m
+02:18:46.684 [31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { [33mThemeSupa[39m } [36mfrom[39m [32m'@supabase/auth-ui-shared'[39m
+02:18:46.684  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+02:18:46.687  [90m 5 |[39m [36mimport[39m { supabase } [36mfrom[39m [32m'@/lib/supabase'[39m
+02:18:46.688  [90m 6 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/navigation'[39m
+02:18:46.688  [90m 7 |[39m [36mimport[39m { useEffect[33m,[39m useState } [36mfrom[39m [32m'react'[39m[0m
+02:18:46.688 
+02:18:46.689 
+02:18:46.690 
+02:18:46.690 Import traces:
+02:18:46.690   Client Component Browser:
+02:18:46.690     ./voice-agent-builder/app/auth/page.tsx [Client Component Browser]
+02:18:46.690     ./voice-agent-builder/app/auth/page.tsx [Server Component]
+02:18:46.690 
+02:18:46.690   Client Component SSR:
+02:18:46.691     ./voice-agent-builder/app/auth/page.tsx [Client Component SSR]
+02:18:46.691     ./voice-agent-builder/app/auth/page.tsx [Server Component]
+02:18:46.691 
+02:18:46.691 https://nextjs.org/docs/messages/module-not-found
+02:18:46.691 
+02:18:46.691 
+02:18:46.691     at <unknown> (./voice-agent-builder/app/auth/page.tsx:3:1)
+02:18:46.691     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+02:18:46.692     at <unknown> (./voice-agent-builder/app/auth/page.tsx:4:1)
+02:18:46.692     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+02:18:46.735 Error: Command "npm run build" exited with 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------
+02:31:44.130 Running build in Washington, D.C., USA (East) – iad1
+02:31:44.131 Build machine configuration: 2 cores, 8 GB
+02:31:44.303 Cloning github.com/firefox-collab/voice-agent-builder (Branch: main, Commit: 78a47d1)
+02:31:44.304 Previous build caches not available.
+02:31:44.548 Cloning completed: 245.000ms
+02:31:44.969 Running "vercel build"
+02:31:45.659 Vercel CLI 48.10.2
+02:31:46.140 Installing dependencies...
+02:31:50.768 npm warn deprecated @supabase/auth-helpers-shared@0.7.0: This package is now deprecated - please use the @supabase/ssr package instead.
+02:31:51.019 npm warn deprecated @supabase/auth-helpers-nextjs@0.10.0: This package is now deprecated - please use the @supabase/ssr package instead.
+02:31:58.614 
+02:31:58.615 added 430 packages in 12s
+02:31:58.615 
+02:31:58.616 161 packages are looking for funding
+02:31:58.616   run `npm fund` for details
+02:31:58.674 Detected Next.js version: 16.0.1
+02:31:58.678 Running "npm run build"
+02:31:58.792 
+02:31:58.793 > voice-agent-builder@0.1.0 build
+02:31:58.793 > next build
+02:31:58.793 
+02:31:59.624 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+02:31:59.625 This information is used to shape Next.js' roadmap and prioritize features.
+02:31:59.625 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+02:31:59.625 https://nextjs.org/telemetry
+02:31:59.626 
+02:31:59.639    ▲ Next.js 16.0.1 (Turbopack)
+02:31:59.640 
+02:31:59.702    Creating an optimized production build ...
+02:32:08.169 
+02:32:08.170 > Build error occurred
+02:32:08.173 Error: Turbopack build failed with 2 errors:
+02:32:08.174 ./voice-agent-builder/app/auth/page.tsx:3:1
+02:32:08.174 Module not found: Can't resolve '@supabase/auth-ui-react'
+02:32:08.174 [0m [90m 1 |[39m [32m'use client'[39m
+02:32:08.174  [90m 2 |[39m
+02:32:08.175 [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mAuth[39m } [36mfrom[39m [32m'@supabase/auth-ui-react'[39m
+02:32:08.175  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+02:32:08.176  [90m 4 |[39m [36mimport[39m { [33mThemeSupa[39m } [36mfrom[39m [32m'@supabase/auth-ui-shared'[39m
+02:32:08.176  [90m 5 |[39m [36mimport[39m { supabase } [36mfrom[39m [32m'@/lib/supabase'[39m
+02:32:08.176  [90m 6 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/navigation'[39m[0m
+02:32:08.176 
+02:32:08.176 
+02:32:08.177 
+02:32:08.177 Import traces:
+02:32:08.177   Client Component Browser:
+02:32:08.177     ./voice-agent-builder/app/auth/page.tsx [Client Component Browser]
+02:32:08.177     ./voice-agent-builder/app/auth/page.tsx [Server Component]
+02:32:08.178 
+02:32:08.178   Client Component SSR:
+02:32:08.178     ./voice-agent-builder/app/auth/page.tsx [Client Component SSR]
+02:32:08.178     ./voice-agent-builder/app/auth/page.tsx [Server Component]
+02:32:08.178 
+02:32:08.178 https://nextjs.org/docs/messages/module-not-found
+02:32:08.179 
+02:32:08.179 
+02:32:08.179 ./voice-agent-builder/app/auth/page.tsx:4:1
+02:32:08.179 Module not found: Can't resolve '@supabase/auth-ui-shared'
+02:32:08.179 [0m [90m 2 |[39m
+02:32:08.179  [90m 3 |[39m [36mimport[39m { [33mAuth[39m } [36mfrom[39m [32m'@supabase/auth-ui-react'[39m
+02:32:08.180 [31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { [33mThemeSupa[39m } [36mfrom[39m [32m'@supabase/auth-ui-shared'[39m
+02:32:08.181  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+02:32:08.182  [90m 5 |[39m [36mimport[39m { supabase } [36mfrom[39m [32m'@/lib/supabase'[39m
+02:32:08.182  [90m 6 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/navigation'[39m
+02:32:08.183  [90m 7 |[39m [36mimport[39m { useEffect[33m,[39m useState } [36mfrom[39m [32m'react'[39m[0m
+02:32:08.183 
+02:32:08.183 
+02:32:08.183 
+02:32:08.183 Import traces:
+02:32:08.183   Client Component Browser:
+02:32:08.183     ./voice-agent-builder/app/auth/page.tsx [Client Component Browser]
+02:32:08.183     ./voice-agent-builder/app/auth/page.tsx [Server Component]
+02:32:08.183 
+02:32:08.183   Client Component SSR:
+02:32:08.183     ./voice-agent-builder/app/auth/page.tsx [Client Component SSR]
+02:32:08.183     ./voice-agent-builder/app/auth/page.tsx [Server Component]
+02:32:08.183 
+02:32:08.183 https://nextjs.org/docs/messages/module-not-found
+02:32:08.183 
+02:32:08.183 
+02:32:08.183     at <unknown> (./voice-agent-builder/app/auth/page.tsx:3:1)
+02:32:08.183     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+02:32:08.183     at <unknown> (./voice-agent-builder/app/auth/page.tsx:4:1)
+02:32:08.183     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+02:32:08.226 Error: Command "npm run build" exited with 1
