@@ -2,12 +2,20 @@
 import { createVapiAgent, createPhoneNumber } from '@/lib/vapi';
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY // Server-side key
-);
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+const supabase = supabaseUrl && supabaseKey
+  ? createClient(supabaseUrl, supabaseKey)
+  : null;
 
 export async function POST(request) {
+  if (!supabase) {
+    return Response.json(
+      { success: false, error: 'Database not configured' },
+      { status: 500 }
+    );
+  }
   try {
     const body = await request.json();
     const { userId, industry, businessName, config } = body;

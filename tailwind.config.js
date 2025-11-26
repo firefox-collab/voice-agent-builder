@@ -24,7 +24,7 @@ module.exports = {
         error: '#ef4444',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       spacing: {
         '18': '4.5rem',
