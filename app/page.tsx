@@ -446,9 +446,9 @@ export default function Home() {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
                 <div className="text-5xl font-bold text-gray-900 mb-2">
-                  3,500
-                  <span className="text-xl text-gray-500 font-normal">/month</span>
-                </div>
+  			1,500
+  		<span className="text-xl text-gray-500 font-normal">/month</span>
+		</div>
                 <p className="text-gray-600">Perfect for getting started</p>
               </div>
 
@@ -483,9 +483,9 @@ export default function Home() {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Professional</h3>
                 <div className="text-5xl font-bold text-white mb-2">
-                  7,000
-                  <span className="text-xl text-primary-100 font-normal">/month</span>
-                </div>
+ 		 3,500
+		<span className="text-xl text-primary-100 font-normal">/month</span>
+		</div>
                 <p className="text-primary-100">For growing businesses</p>
               </div>
 
@@ -518,9 +518,9 @@ export default function Home() {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
                 <div className="text-5xl font-bold text-gray-900 mb-2">
-                  15,000
-                  <span className="text-xl text-gray-500 font-normal">/month</span>
-                </div>
+ 		 7,000
+ 		 <span className="text-xl text-gray-500 font-normal">/month</span>
+		</div>
                 <p className="text-gray-600">For established businesses</p>
               </div>
 
@@ -615,50 +615,26 @@ export default function Home() {
             Join Philippine businesses who are saving time, money, and sanity with their 24/7 AI voice assistants. Start your free trial today — no credit card needed.
           </p>
 
-          <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-md mx-auto">
-            <form className="space-y-4">
-              <div>
-                <input
-                  type="text"
-                  placeholder="Business Name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                />
-              </div>
-              <div>
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                />
-              </div>
-              <div>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-700">
-                  <option>Select Your Industry</option>
-                  <option>Restaurant/Cafe</option>
-                  <option>Medical Clinic</option>
-                  <option>Salon/Spa</option>
-                  <option>Retail Store</option>
-                  <option>Real Estate</option>
-                  <option>Auto Repair</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <button type="submit" className="w-full bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-800 transition-all shadow-lg hover:shadow-xl">
-                Start My Free Trial
-              </button>
-              <p className="text-sm text-gray-500 mt-4">
-                30 days free • No credit card required • Cancel anytime
-              </p>
-            </form>
-          </div>
+          <div className="mb-6">
+ 		 <span className="inline-block px-4 py-2 bg-red-500 text-white rounded-full text-sm font-semibold mb-4">
+    🔥 Only 15 spots remaining! Offer ends November 30
+	  </span>
+	</div>
 
+<div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-2xl max-w-3xl mx-auto">
+  <iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLScdOQrmUNeq77IOEBNqHWlVfG74eUDs9DFRYr16FiqMQaPN_g/viewform?embedded=true" 
+    width="100%" 
+    height="1200" 
+    frameBorder="0" 
+    marginHeight="0" 
+    marginWidth="0"
+    className="w-full rounded-lg"
+  >
+    Loading…
+  </iframe>
+</div>
+            
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-primary-100">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
