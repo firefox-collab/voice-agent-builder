@@ -1,7 +1,6 @@
 'use client'
 
 import ShaderBackground from './components/ShaderBackground'
-import Navbar from './components/ui/Navbar'
 import Accordion from './components/ui/Accordion'
 import { useState } from 'react'
 
@@ -267,7 +266,7 @@ export default function Home() {
               Why Choose Voice-Agent-Builder?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're not just another AI tool. We're your partner in business growth.
+              We&apos;re not just another AI tool. We&apos;re your partner in business growth.
             </p>
           </div>
 

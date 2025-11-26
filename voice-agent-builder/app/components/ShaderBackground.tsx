@@ -149,7 +149,7 @@ export default function ShaderBackground() {
     resize()
     window.addEventListener('resize', resize)
 
-    let startTime = Date.now()
+    const startTime = Date.now()
     let animationId: number
 
     function render() {
