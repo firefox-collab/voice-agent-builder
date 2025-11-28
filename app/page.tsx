@@ -48,7 +48,7 @@ export default function Home() {
     }
   }
 
-  const handleInputChange = (e: React.ChangeEvent) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -670,153 +670,158 @@ export default function Home() {
 	</div>
 
 <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-2xl max-w-3xl mx-auto">
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLScdOQrmUNeq77IOEBNqHWlVfG74eUDs9DFRYr16FiqMQaPN_g/viewform?embedded=true" 
-    width="100%" 
-    height="1200" 
-    frameBorder="0" 
-    marginHeight="0" 
-    marginWidth="0"
-    className="w-full rounded-lg"
-  >
-   
-    
-      
-        
-          
-        
-      
-      
-   🎉 Salamat! Welcome Aboard!
-      
-      
-      We'll contact you within 24 hours to set up your AI voice assistant.
-    
-    <button
-      onClick={() => setSubmitStatus('idle')}
-      className="text-primary-600 hover:text-primary-700 font-semibold"
-    >
-      Submit Another Request
-    
- 
-      {submitStatus === 'success' ? (
-    
-      
-        
-          
-        
-      
-      
-    🎉 Salamat! Welcome Aboard!
-  
-  
-    We'll contact you within 24 hours to set up your AI voice assistant.
-  
-  <button
-    onClick={() => setSubmitStatus('idle')}
-    className="text-primary-600 hover:text-primary-700 font-semibold"
-  >
-    Submit Another Request
-  
+  {submitStatus === 'success' ? (
+    <div className="text-center py-12">
+      <div className="mb-6">
+        <svg className="w-20 h-20 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        🎉 Salamat! Welcome Aboard!
+      </h3>
+      <p className="text-xl text-gray-600 mb-6">
+        We'll contact you within 24 hours to set up your AI voice assistant.
+      </p>
+      <button
+        onClick={() => setSubmitStatus('idle')}
+        className="text-primary-600 hover:text-primary-700 font-semibold"
+      >
+        Submit Another Request
+      </button>
+    </div>
+  ) : (
+    <form onSubmit={handleFormSubmit} className="space-y-6">
+      <div className="text-center mb-8">
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+          Start Your Free Trial
+        </h3>
+        <p className="text-gray-600">
+          Fill out the form below and we'll set you up in 5 minutes!
+        </p>
+      </div>
 
-) : (
+      <div>
+        <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+          Your Name *
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+          placeholder="Juan Dela Cruz"
+        />
+      </div>
 
-  
-    
-      Start Your Free Trial
-    
-    
-      Fill out the form below and we'll set you up in 5 minutes!
-    
-  
+      <div>
+        <label htmlFor="businessName" className="block text-sm font-semibold text-gray-700 mb-2">
+          Business Name *
+        </label>
+        <input
+          type="text"
+          id="businessName"
+          name="businessName"
+          value={formData.businessName}
+          onChange={handleInputChange}
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+          placeholder="Sunshine Cafe Manila"
+        />
+      </div>
 
-  
-    
-      Your Name *
-    
-    
-  
+      <div>
+        <label htmlFor="businessType" className="block text-sm font-semibold text-gray-700 mb-2">
+          Type of Business *
+        </label>
+        <select
+          id="businessType"
+          name="businessType"
+          value={formData.businessType}
+          onChange={handleInputChange}
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-white"
+        >
+          <option value="">Select your industry...</option>
+          <option value="Restaurant/Café">Restaurant / Café</option>
+          <option value="Medical/Dental Clinic">Medical / Dental Clinic</option>
+          <option value="Real Estate">Real Estate</option>
+          <option value="Retail/E-commerce">Retail / E-commerce</option>
+          <option value="Logistics/Courier">Logistics / Courier</option>
+          <option value="IT Services">IT Services</option>
+          <option value="Customer Support">Customer Support</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
 
-  
-    
-      Business Name *
-    
-    
-  
+      <div>
+        <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+          Phone Number *
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          value={formData.phone}
+          onChange={handleInputChange}
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+          placeholder="+63 912 345 6789"
+        />
+      </div>
 
-  
-    
-      Type of Business *
-    
-    
-      Select your industry...
-      Restaurant / Café
-      Medical / Dental Clinic
-      Real Estate
-      Retail / E-commerce
-      Logistics / Courier
-      IT Services
-      Customer Support
-      Other
-    
-  
+      {submitStatus === 'error' && (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <p className="text-red-600 text-sm">
+            ⚠️ Something went wrong. Please try again or contact us directly.
+          </p>
+        </div>
+      )}
 
-  
-    
-      Phone Number *
-    
-    
-  
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-primary-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary-700 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+      >
+        {isSubmitting ? (
+          <span className="flex items-center justify-center">
+            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Submitting...
+          </span>
+        ) : (
+          '🚀 Start My Free Trial'
+        )}
+      </button>
 
-  {submitStatus === 'error' && (
-    
-      
-        ⚠️ Something went wrong. Please try again or contact us directly.
-      
-    
+      <div className="flex items-center justify-center gap-4 text-sm text-gray-500 pt-4">
+        <div className="flex items-center gap-2">
+          <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+          <span>5-minute setup</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+          <span>30-day free trial</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+          <span>Cancel anytime</span>
+        </div>
+      </div>
+    </form>
   )}
-
-  
-    {isSubmitting ? (
-      
-        
-          
-          
-        
-        Submitting...
-      
-    ) : (
-      '🚀 Start My Free Trial'
-    )}
-  
-
-  
-    
-      
-        
-      
-      5-minute setup
-    
-    
-      
-        
-      
-      30-day free trial
-    
-    
-      
-        
-      
-      Cancel anytime
-    
-  
-
-)}
-
-
-  </iframe>
 </div>
-            
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-primary-100">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
