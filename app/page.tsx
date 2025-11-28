@@ -6,6 +6,54 @@ import { useState } from 'react'
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    businessName: '',
+    businessType: '',
+    phone: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('idle')
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('http://localhost:5678/webhook-test/voice-agent-cta', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          businessName: '',
+          businessType: '',
+          phone: ''
+        })
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleInputChange = (e: React.ChangeEvent) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
 
   return (
     <main className="relative bg-white">
@@ -631,7 +679,141 @@ export default function Home() {
     marginWidth="0"
     className="w-full rounded-lg"
   >
-    Loading…
+   
+    
+      
+        
+          
+        
+      
+      
+   🎉 Salamat! Welcome Aboard!
+      
+      
+      We'll contact you within 24 hours to set up your AI voice assistant.
+    
+    <button
+      onClick={() => setSubmitStatus('idle')}
+      className="text-primary-600 hover:text-primary-700 font-semibold"
+    >
+      Submit Another Request
+    
+ 
+      {submitStatus === 'success' ? (
+    
+      
+        
+          
+        
+      
+      
+    🎉 Salamat! Welcome Aboard!
+  
+  
+    We'll contact you within 24 hours to set up your AI voice assistant.
+  
+  <button
+    onClick={() => setSubmitStatus('idle')}
+    className="text-primary-600 hover:text-primary-700 font-semibold"
+  >
+    Submit Another Request
+  
+
+) : (
+
+  
+    
+      Start Your Free Trial
+    
+    
+      Fill out the form below and we'll set you up in 5 minutes!
+    
+  
+
+  
+    
+      Your Name *
+    
+    
+  
+
+  
+    
+      Business Name *
+    
+    
+  
+
+  
+    
+      Type of Business *
+    
+    
+      Select your industry...
+      Restaurant / Café
+      Medical / Dental Clinic
+      Real Estate
+      Retail / E-commerce
+      Logistics / Courier
+      IT Services
+      Customer Support
+      Other
+    
+  
+
+  
+    
+      Phone Number *
+    
+    
+  
+
+  {submitStatus === 'error' && (
+    
+      
+        ⚠️ Something went wrong. Please try again or contact us directly.
+      
+    
+  )}
+
+  
+    {isSubmitting ? (
+      
+        
+          
+          
+        
+        Submitting...
+      
+    ) : (
+      '🚀 Start My Free Trial'
+    )}
+  
+
+  
+    
+      
+        
+      
+      5-minute setup
+    
+    
+      
+        
+      
+      30-day free trial
+    
+    
+      
+        
+      
+      Cancel anytime
+    
+  
+
+)}
+
+
   </iframe>
 </div>
             
