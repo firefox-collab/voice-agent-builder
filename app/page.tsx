@@ -21,7 +21,7 @@ export default function Home() {
     setSubmitStatus('idle')
 
     try {
-      const response = await fetch('http://localhost:5678/webhook-test/voice-agent-cta', {
+      const response = await fetch('/api/submit-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

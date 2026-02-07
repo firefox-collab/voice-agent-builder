@@ -1,68 +1,37 @@
-// app/api/agents/create/route.js
 import { createVapiAgent, createPhoneNumber } from '@/lib/vapi';
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-const supabase = supabaseUrl && supabaseKey
-  ? createClient(supabaseUrl, supabaseKey)
-  : null;
+import { supabase } from '@/lib/supabase';
 
 export async function POST(request) {
-  if (!supabase) {
-    return Response.json(
-      { success: false, error: 'Database not configured' },
-      { status: 500 }
-    );
-  }
   try {
     const body = await request.json();
     const { userId, industry, businessName, config } = body;
 
-    // 1. Create Vapi Assistant
     const vapiAgent = await createVapiAgent({
       name: `${businessName} - ${industry}`,
-      systemPrompt: generatePromptForIndustry(industry, config),
+      systemPrompt: generatePromptForIndustry(industry, config || {}),
       firstMessage: `Hello! Thank you for calling ${businessName}. How can I help you today?`,
-      voiceId: config.voiceId || "default"
+      voiceId: (config && config.voiceId) || "default"
     });
 
-    // 2. Create Phone Number for Agent
     const phoneNumber = await createPhoneNumber(vapiAgent.id);
 
-    // 3. Save to Supabase
-    const { data: dbAgent, error: dbError } = await supabase
-      .from('agents')
-      .insert({
-        user_id: userId,
-        vapi_agent_id: vapiAgent.id,
-        phone_number: phoneNumber.number,
-        industry: industry,
-        business_name: businessName,
-        config: config,
-        status: 'active'
-      })
-      .select()
-      .single();
+    const mockAgent = {
+      id: `agent-${Date.now()}`,
+      user_id: userId,
+      vapi_agent_id: vapiAgent.id,
+      phone_number: phoneNumber.number,
+      industry: industry,
+      business_name: businessName,
+      config: config,
+      status: 'active',
+      created_at: new Date().toISOString()
+    };
 
-    if (dbError) throw dbError;
+    console.log('Agent created (mock):', mockAgent);
 
-    // 4. Trigger n8n Webhook
-    await fetch(process.env.N8N_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        event: 'agent_created',
-        agent: dbAgent,
-        vapi_data: vapiAgent
-      })
-    });
-
-    // 5. Return success
     return Response.json({
       success: true,
-      agent: dbAgent,
+      agent: mockAgent,
       phoneNumber: phoneNumber.number
     });
 
@@ -75,11 +44,10 @@ export async function POST(request) {
   }
 }
 
-// Helper function for industry-specific prompts
 function generatePromptForIndustry(industry, config) {
   const prompts = {
-    restaurant: `You are a friendly AI receptionist for ${config.businessName}, a restaurant in the Philippines. 
-    
+    restaurant: `You are a friendly AI receptionist for ${config.businessName || 'a restaurant'}, a restaurant in the Philippines.
+
 Your responsibilities:
 - Take reservations (ask: name, phone, date, time, number of guests)
 - Answer questions about menu, hours, location
@@ -92,9 +60,9 @@ Business Details:
 - Cuisine: ${config.cuisine || 'Filipino'}
 
 Always be warm, helpful, and use "po" and "opo" for respect when appropriate.`,
-    
-    clinic: `You are a professional AI receptionist for ${config.businessName}, a medical clinic.
-    
+
+    clinic: `You are a professional AI receptionist for ${config.businessName || 'a clinic'}, a medical clinic.
+
 Your responsibilities:
 - Schedule appointments (collect: name, phone, concern, preferred date/time)
 - Answer questions about services, doctors, hours
@@ -102,9 +70,8 @@ Your responsibilities:
 - Verify insurance coverage
 
 Always maintain HIPAA-compliant language and professional tone.`,
-    
-    // Add other industries...
   };
 
   return prompts[industry] || prompts.restaurant;
 }
+
