@@ -2,6 +2,7 @@
 
 import ShaderBackground from './components/ShaderBackground'
 import Accordion from './components/ui/Accordion'
+import VapiDemoButton from './components/VapiDemoButton'
 import { useState } from 'react'
 
 export default function Home() {
@@ -135,17 +136,16 @@ export default function Home() {
 
           <div className="mt-20 relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary-100 to-blue-100 rounded-3xl transform rotate-1 opacity-80"></div>
-            <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-gray-200">
-              <div className="aspect-video bg-gradient-to-br from-primary-50 to-blue-50 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600 font-medium">Product Demo Video</p>
-                  <p className="text-sm text-gray-500 mt-1">See how easy it is to set up your voice agent</p>
-                </div>
+            <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-2 md:p-4 border border-gray-200">
+              <div className="aspect-video bg-black rounded-xl overflow-hidden relative shadow-inner">
+                <video 
+                  controls 
+                  className="w-full h-full object-contain"
+                  preload="metadata"
+                >
+                  <source src="/Voice_Agent_product_demo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
@@ -192,7 +192,9 @@ export default function Home() {
                 icon: '🍽️',
                 title: 'Restaurants & Cafes',
                 description: 'Take reservations, answer menu questions, and handle delivery inquiries while your staff focuses on serving customers.',
-                features: ['Table reservations', 'Menu information', 'Operating hours', 'Delivery status']
+                features: ['Table reservations', 'Menu information', 'Operating hours', 'Delivery status'],
+                vapiAgentId: '174ad0b7-5273-4f72-850f-865dfe18c113',
+                demoName: "Sunshine Cafe' Agent Demo"
               },
               {
                 icon: '🏥',
@@ -225,15 +227,15 @@ export default function Home() {
                 features: ['Product availability', 'Store locations', 'Return policy', 'Promo information']
               }
             ].map((industry, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-primary-300 hover:shadow-xl transition-all group">
+              <div key={idx} className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-primary-300 hover:shadow-xl transition-all group flex flex-col">
                 <div className="text-5xl mb-4">{industry.icon}</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                   {industry.title}
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-6 flex-grow">
                   {industry.description}
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-8">
                   {industry.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
                       <svg className="w-5 h-5 text-success mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -243,6 +245,12 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+                {industry.vapiAgentId && (
+                  <VapiDemoButton 
+                    agentId={industry.vapiAgentId} 
+                    label={industry.demoName} 
+                  />
+                )}
               </div>
             ))}
           </div>

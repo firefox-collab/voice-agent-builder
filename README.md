@@ -1,283 +1,108 @@
 # Voice Agent Builder 🎙️
 
-**AI Voice Receptionists for Philippine SMBs**
-
----
-
-## 📦 Local Development Version
-
-This version has been prepared for **local development and testing** on your PC. All external dependencies (Supabase, Vapi, n8n) have been removed or stubbed out to allow you to work offline and iterate quickly.
-
-### 🚀 Quick Start
-
-1. **Install Dependencies**
-   ```bash
-   npm install
-   ```
-
-2. **Run Development Server**
-   ```bash
-   npm run dev
-   ```
-
-3. **Open Browser**
-   ```
-   http://localhost:3000
-   ```
-
-### 📚 Documentation
-
-**Please read these guides in order:**
-
-1. **[DOWNLOAD_INSTRUCTIONS.md](./DOWNLOAD_INSTRUCTIONS.md)** - How to download and extract this project
-2. **[SETUP_INSTRUCTIONS.md](./SETUP_INSTRUCTIONS.md)** - Complete setup guide for Cursor IDE
-3. **[REMOVED_DEPENDENCIES.md](./REMOVED_DEPENDENCIES.md)** - What was removed and how to restore it
-4. **[DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)** - How to deploy to Hostinger production server
-
----
+**AI Voice Receptionists for Philippine SMBs - 90 Day Build Journey**
 
 ## 🎯 What is Voice Agent Builder?
 
 Voice Agent Builder helps Philippine small and medium businesses deploy AI voice receptionists in 3 simple steps:
+1. Choose your industry (Cafe, Restaurant, Clinic, Retail, Salon, Hotel)
+2. Customize your agent's personality and responses
+3. Deploy and start receiving calls
 
-1. **Choose your industry** (Restaurant, Clinic, Salon, Retail, Real Estate, Auto Repair)
-2. **Customize your agent** (voice, personality, business details)
-3. **Launch and relax** (24/7 AI receptionist handles calls)
+## 🚀 Current Status (December 2025)
 
-### Key Features
+**Built by:** AICore IT Solutions  
+**Founder:** Art (Head of IT Service Operations @ Philippine Span Asia Carrier Corp)  
+**Stage:** Active development - 90-day build journey  
+**Last Updated:** December 12, 2025
 
-- ⚡ **5-minute setup** - No coding required
-- 🗣️ **Natural conversations** - Understands Taglish (code-switching)
-- 📅 **Smart scheduling** - Books and manages appointments
-- 📊 **Call analytics** - Track what customers ask about
-- 🔒 **Secure & private** - Bank-level encryption
-- 💰 **Affordable pricing** - Starting at ₱1,500/month
+### ✅ Completed
+- ✅ Sunshine Cafe demo agent (trilingual: English, Tagalog, Bisaya)
+- ✅ Landing page with neural shader effects
+- ✅ Vapi voice AI integration (GPT-4o + Deepgram STT/TTS)
+- ✅ Google Sheets call logging
+- ✅ CTA form with n8n webhook integration
+- ✅ Local development environment (Next.js 14)
+- ✅ GitHub repository structure
+- ✅ Bolt.new integration for rapid development
 
----
+### 🔄 In Progress
+- 🔄 Additional industry agents (Restaurant, Clinic, Retail, Salon, Hotel)
+- 🔄 3-step agent creation UX
+- 🔄 Customer dashboard
+- 🔄 Working product demo
+- 🔄 Functional buttons on landing page
+- 🔄 End-to-end customer signup → agent deployment system
+
+### ⏳ Planned
+- ⏳ User authentication & dashboard
+- ⏳ Payment integration
+- ⏳ Telco SIP trunk integration (₱1,500/month per 10-channel)
+- ⏳ Multi-tenant agent management
+- ⏳ Usage analytics & reporting
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Framework:** Next.js 14 (React)
+- **Framework:** Next.js 14.2.18 + TypeScript
 - **Styling:** Tailwind CSS
-- **Components:** Custom UI components
-- **TypeScript:** For type safety
+- **Effects:** Custom neural shader background
+- **Development:** Bolt.new (primary IDE)
 
-### Backend (Currently Stubbed)
-- **Database:** Supabase (PostgreSQL)
-- **Voice AI:** Vapi.ai
-- **Automation:** n8n workflows
-- **Authentication:** Supabase Auth
+### Voice AI
+- **Platform:** Vapi (v2.2.5)
+- **LLM:** GPT-4o
+- **STT:** Deepgram
+- **TTS:** Deepgram
+- **Phone:** Twilio (current) → Telco SIP trunk (planned)
 
-### Development Tools
-- **IDE:** Cursor (recommended)
-- **Package Manager:** npm
-- **Linting:** ESLint
-- **Build:** Next.js build system
+### Backend & Automation
+- **Automation:** n8n (workflow engine)
+- **Database:** Google Sheets (logging) + Supabase (planned)
+- **Auth:** Supabase Auth (configured)
 
----
+### Infrastructure
+- **Development:** Local PC (npm run dev)
+- **Version Control:** GitHub (firefox-collab/voice-agent-builder)
+- **IDE:** Bolt.new → GitHub → Local PC testing
+- **Deployment:** Vercel (outdated, low priority)
 
-## 📁 Project Structure
+## 💰 Pricing Strategy
+
+Targeting Philippine SMBs with affordable, transparent pricing:
+- **Target market:** Businesses currently spending ₱15,000-25,000/month on human receptionists
+- **Our offering:** AI voice receptionist at significantly lower cost
+- **Value proposition:** 24/7 availability, multilingual (EN/TL/BIS), professional service
+
+## 🎯 Target Industries
+
+1. **Cafes & Coffee Shops** - Sunshine Cafe (working demo!)
+2. **Restaurants** - Reservations, hours, menu inquiries
+3. **Clinics** - Appointment scheduling, hours, services
+4. **Retail Stores** - Product inquiries, store hours, location
+5. **Salons & Spas** - Appointment booking, services, pricing
+6. **Hotels** - Reservations, amenities, room availability
+
+## 🏗️ Development Workflow
 
 ```
-voice-agent-builder/
-├── app/
-│   ├── api/                    # API routes (stubbed)
-│   │   ├── agents/create/     # Voice agent creation
-│   │   └── submit-form/       # Form submission
-│   ├── components/            # React components
-│   │   ├── ShaderBackground.tsx
-│   │   └── ui/               # Reusable UI components
-│   ├── globals.css           # Global styles
-│   ├── layout.tsx            # Root layout
-│   └── page.tsx              # Landing page
-├── lib/
-│   ├── supabase.js           # Stubbed Supabase client
-│   └── vapi.js               # Stubbed Vapi functions
-├── public/                   # Static assets
-├── .env                      # Environment variables
-├── package.json              # Dependencies
-├── next.config.js            # Next.js configuration
-├── tailwind.config.js        # Tailwind configuration
-├── tsconfig.json             # TypeScript configuration
-└── *.md                      # Documentation files
+BOLT.NEW (Primary Development)
+    ↓
+    Changes pushed to GitHub
+    ↓
+GITHUB (firefox-collab/voice-agent-builder)
+    ↓
+    Pulled to Local PC for testing
+    ↓
+LOCAL PC (npm run dev - Testing & Verification)
 ```
 
----
+## 📞 Demo & Contact
 
-## 🚀 Current Status
-
-**Version:** Local Development Build
-**Built by:** AICore
-**Founder:** Art
-
-### ✅ Completed Features
-
-- ✓ Professional landing page design
-- ✓ Animated shader background
-- ✓ Industry-specific solutions showcase
-- ✓ Pricing calculator
-- ✓ FAQ accordion
-- ✓ Contact form (local submission)
-- ✓ Mobile responsive design
-- ✓ Prepared for local development
-
-### 🔄 Pending Integration
-
-- ⏳ Supabase database connection
-- ⏳ Vapi voice AI integration
-- ⏳ n8n automation workflows
-- ⏳ User authentication
-- ⏳ Payment processing (Stripe)
-- ⏳ Production deployment
+**Try the Sunshine Cafe Agent:** [Phone number TBD]  
+**Website:** [Coming soon]  
+**Built by:** AICore IT Solutions
 
 ---
-
-## 💻 Development Workflow
-
-### For Local Testing
-
-1. **Make changes** to any file
-2. **Save** (Ctrl+S) - browser auto-refreshes
-3. **Test** in browser at localhost:3000
-4. **Iterate** quickly without external dependencies
-
-### Building for Production
-
-```bash
-# Test production build
-npm run build
-
-# Run production build locally
-npm run start
-```
-
-### Testing Checklist
-
-- [ ] Landing page loads correctly
-- [ ] All sections display properly
-- [ ] Navigation works
-- [ ] Form submission works
-- [ ] Mobile responsive
-- [ ] No console errors
-- [ ] Production build succeeds
-
----
-
-## 🌐 External Services (Not Included)
-
-This local version **does not** include:
-
-- **Supabase** - Database and authentication
-- **Vapi.ai** - Voice AI agents
-- **n8n** - Workflow automation
-- **Stripe** - Payment processing
-
-See [REMOVED_DEPENDENCIES.md](./REMOVED_DEPENDENCIES.md) for details on how to restore these services.
-
----
-
-## 📦 Deployment Options
-
-### Option 1: Hostinger VPS
-- Full Next.js support
-- Server-side rendering
-- API routes work
-- ~$5-10/month
-
-### Option 2: Hostinger Shared Hosting
-- Static export only
-- Limited functionality
-- More affordable
-- ~$3-5/month
-
-### Option 3: Vercel (Recommended)
-- Zero configuration
-- Best for Next.js
-- Free tier available
-- Easiest deployment
-
-See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for complete instructions.
-
----
-
-## 🎓 Learning Resources
-
-### Next.js
-- Official Docs: https://nextjs.org/docs
-- Learn Next.js: https://nextjs.org/learn
-
-### Tailwind CSS
-- Official Docs: https://tailwindcss.com/docs
-- Components: https://tailwindui.com/
-
-### React
-- Official Docs: https://react.dev/
-- React Patterns: https://reactpatterns.com/
-
-### TypeScript
-- Official Docs: https://www.typescriptlang.org/docs/
-
----
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**Port 3000 in use:**
-```bash
-npm run dev -- -p 3001
-```
-
-**Module not found:**
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
-**Build errors:**
-```bash
-npm run build
-# Check output for specific errors
-```
-
-See [SETUP_INSTRUCTIONS.md](./SETUP_INSTRUCTIONS.md) for more troubleshooting tips.
-
----
-
-## 📝 Next Steps
-
-1. **Complete local setup** following [SETUP_INSTRUCTIONS.md](./SETUP_INSTRUCTIONS.md)
-2. **Customize the design** - Edit colors, text, images
-3. **Test all features** - Ensure everything works as expected
-4. **Plan integration** - Review [REMOVED_DEPENDENCIES.md](./REMOVED_DEPENDENCIES.md)
-5. **Deploy to production** - Follow [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
-
----
-
-## 📫 Support
-
-If you need help:
-
-1. Check the documentation files first
-2. Review Next.js documentation
-3. Use Cursor AI assistant (Ctrl+K)
-4. Search for errors on Google/Stack Overflow
-
----
-
-## 📄 License
-
-See [LICENSE](./LICENSE) file for details.
-
----
-
-## 🙏 Credits
-
-**Built with:**
-- Next.js
-- Tailwind CSS
-- Cursor IDE
-- Love and patience ❤️
 
 **Building HOME, one voice agent at a time.** 🏡
