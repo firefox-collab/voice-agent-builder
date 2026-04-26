@@ -143,7 +143,7 @@ export default function Home() {
                   className="w-full h-full object-contain"
                   preload="metadata"
                 >
-                  <source src="/Voice_Agent_product_demo.mp4" type="video/mp4" />
+                  <source src="https://www.aicoreitsolutionsph.com/Voice_Agent_product_demo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
